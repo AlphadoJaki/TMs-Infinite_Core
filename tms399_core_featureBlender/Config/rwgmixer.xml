@@ -1,0 +1,100 @@
+<configs>
+<!-- Controller of plain -->
+<append xpath="/*/terrain_generators/*[@name='vanilla']|/*/trash">
+	<module name="pln_ctrlBase" type="ScaleBiasOutput">
+		<property name="sourceModule" value="ftr_ctrl"/>
+		<property name="scale" value="3"/>
+		<property name="bias" value="-2"/>
+	</module>
+	<module name="pln_ctrl" type="ClampOutput">
+		<property name="sourceModule" value="pln_ctrlBase"/>
+		<property name="bounds" value="0,1"/>
+	</module>
+</append>
+
+<!-- Controller of feature assigner -->
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_ctrl'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_ctrl'][2]/*[@value='ftr_ctrl']/@value|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_modifierOutput'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_modifierOutput'][1]/*[@value='ftr_ctrl']/@value|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_ctrl'][last()=1]/parent::*/*[@name='pln_ctrlBase']/*[@name='sourceModule']/@value|/*/trash">
+				01</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_ctrl'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_ctrl'][2]/*[@value='ftr_ctrl']/@value|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_modifierOutput'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_modifierOutput'][1]/*[@value='ftr_ctrl']/@value|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_ctrl'][last()=1]/parent::*/*[@name='pln_ctrlBase']/*[@name='sourceModule']/@value|/*/trash">
+				02</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_ctrl'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_ctrl'][2]/*[@value='ftr_ctrl']/@value|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_modifierOutput'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_modifierOutput'][1]/*[@value='ftr_ctrl']/@value|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_ctrl'][last()=1]/parent::*/*[@name='pln_ctrlBase']/*[@name='sourceModule']/@value|/*/trash">
+				03</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_ctrl'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_ctrl'][2]/*[@value='ftr_ctrl']/@value|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_modifierOutput'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_modifierOutput'][1]/*[@value='ftr_ctrl']/@value|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_ctrl'][last()=1]/parent::*/*[@name='pln_ctrlBase']/*[@name='sourceModule']/@value|/*/trash">
+				04</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_ctrl'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_ctrl'][2]/*[@value='ftr_ctrl']/@value|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_modifierOutput'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_modifierOutput'][1]/*[@value='ftr_ctrl']/@value|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_ctrl'][last()=1]/parent::*/*[@name='pln_ctrlBase']/*[@name='sourceModule']/@value|/*/trash">
+				05</append>
+
+<!-- Feature blender module -->
+<append xpath="/*/terrain_generators/*[@name='vanilla'][count(*[starts-with(@name,'ftr_modifierOutput')])=0]|/*/trash">
+	<module name="ftr_output" type="Constant"/>
+</append>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[starts-with(@name,'ftr_modifierOutput')][last()=1]/@name|/*/trash">ftr_output</set>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[starts-with(@name,'ftr_modifierOutput')][last()=2]/parent::*|/*/trash">
+	<module name="ftr_output" type="Add">
+		<property name="sourceModule1" value="ftr_modifierOutput01"/>
+		<property name="sourceModule2" value="ftr_modifierOutput02"/>
+	</module>
+</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[starts-with(@name,'ftr_modifierOutput')][last()=3]/parent::*|/*/trash">
+	<module name="ftr_blender1" type="Add">
+		<property name="sourceModule1" value="ftr_modifierOutput01"/>
+		<property name="sourceModule2" value="ftr_modifierOutput02"/>
+	</module>
+	<module name="ftr_output" type="Add">
+		<property name="sourceModule1" value="ftr_blender1"/>
+		<property name="sourceModule2" value="ftr_modifierOutput03"/>
+	</module>
+</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[starts-with(@name,'ftr_modifierOutput')][last()=4]/parent::*|/*/trash">
+	<module name="ftr_blender1" type="Add">
+		<property name="sourceModule1" value="ftr_modifierOutput01"/>
+		<property name="sourceModule2" value="ftr_modifierOutput02"/>
+	</module>
+	<module name="ftr_blender2" type="Add">
+		<property name="sourceModule1" value="ftr_blender1"/>
+		<property name="sourceModule2" value="ftr_modifierOutput03"/>
+	</module>
+	<module name="ftr_output" type="Add">
+		<property name="sourceModule1" value="ftr_blender2"/>
+		<property name="sourceModule2" value="ftr_modifierOutput04"/>
+	</module>
+</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[starts-with(@name,'ftr_modifierOutput')][last()=5]/parent::*|/*/trash">
+	<module name="ftr_blender1" type="Add">
+		<property name="sourceModule1" value="ftr_modifierOutput01"/>
+		<property name="sourceModule2" value="ftr_modifierOutput02"/>
+	</module>
+	<module name="ftr_blender2" type="Add">
+		<property name="sourceModule1" value="ftr_blender1"/>
+		<property name="sourceModule2" value="ftr_modifierOutput03"/>
+	</module>
+	<module name="ftr_blender3" type="Add">
+		<property name="sourceModule1" value="ftr_blender2"/>
+		<property name="sourceModule2" value="ftr_modifierOutput04"/>
+	</module>
+	<module name="ftr_output" type="Add">
+		<property name="sourceModule1" value="ftr_blender3"/>
+		<property name="sourceModule2" value="ftr_modifierOutput05"/>
+	</module>
+</append>
+</configs>

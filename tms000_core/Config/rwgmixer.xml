@@ -1,0 +1,46 @@
+<!--
+val_0
+val_p1
+val_m1
+val_baseInv
+val_wtr
+val_rivBtm
+val_ocnBtm
+val_mntHeight
+-->
+<configs>
+<append xpath="/|/*/trash"><trash/></append>
+
+<set xpath="/*/terrain_generators|/*/trash">
+	<terrain_generator name="vanilla" base_height="32" water_level="41">
+		<module name="val_0" type="Constant"/>
+		<module name="val_p1" type="Constant"><property name="constant" value="1"/></module>
+		<module name="val_m1" type="Constant"><property name="constant" value="-1"/></module>
+
+		<module name="val_baseCfg" type="Constant"><property name="constant" value="32"/></module>
+		<module name="val_baseShrunk" type="ScaleOutput"><property name="sourceModule" value="val_baseCfg"/><property name="scale" value="0.01"/></module>
+		<module name="val_baseInv" type="InvertOutput"><property name="sourceModule" value="val_baseShrunk"/></module>
+
+		<module name="val_wtrCfg" type="Constant"><property name="constant" value="41"/></module>
+		<module name="val_wtrShrunk" type="ScaleOutput"><property name="sourceModule" value="val_wtrCfg"/><property name="scale" value="0.01"/></module>
+		<module name="val_wtrAdder" type="Add"><property name="sourceModule1" value="val_wtrShrunk"/><property name="sourceModule2" value="val_baseInv"/></module>
+
+		<module name="val_rivBtm" type="BiasOutput"><property name="sourceModule" value="val_wtrAdder"/><property name="bias" value="-0.1"/></module>
+		<module name="val_ocnBtm" type="BiasOutput"><property name="sourceModule" value="val_baseInv"/><property name="bias" value="0"/></module>
+
+		<module name="val_mntHeightCfg" type="Constant"><property name="constant" value="255"/></module>
+		<module name="val_mntHeightShrunk" type="ScaleOutput"><property name="sourceModule" value="val_mntHeightCfg"/><property name="scale" value="0.01"/></module>
+		<module name="val_mntHeightBase" type="Add"><property name="sourceModule1" value="val_mntHeightShrunk"/><property name="sourceModule2" value="val_baseInv"/></module>
+
+		<module name="val_plnBtm" type="Constant"><property name="constant" value="0.06"/></module>
+		<module name="val_plnCtr" type="Constant"><property name="constant" value="0.16"/></module>
+		<module name="val_plnRof" type="Constant"><property name="constant" value="0.36"/></module>
+
+		<module name="val_rivSide" type="Constant"><property name="constant" value="0.01"/></module>
+		<module name="val_canyonBtm" type="Constant"><property name="constant" value="0.02"/></module>
+
+		<module name="ftr_ctrl" type="Constant"><property name="constant" value="1"/></module>
+
+	</terrain_generator>
+</set>
+</configs>

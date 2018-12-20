@@ -1,0 +1,3 @@
+<configs>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='wld_output']/@name|/*/trash">output</set>
+</configs>

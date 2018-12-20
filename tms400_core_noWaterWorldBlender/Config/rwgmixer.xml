@@ -1,0 +1,8 @@
+<configs>
+<append xpath="/*/terrain_generators/*[@name='vanilla']|/*/trash">
+	<module name="pln_nerfed" type="Multiply">
+		<property name="sourceModule1" value="pln_output"/>
+		<property name="sourceModule2" value="pln_ctrl"/>
+	</module>
+</append>
+</configs>

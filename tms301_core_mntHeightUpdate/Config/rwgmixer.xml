@@ -1,0 +1,12 @@
+<configs>
+<append xpath="/*/terrain_generators/*[@name='vanilla']|/*/trash">
+	<module name="ctn_outputInv" type="InvertInput">
+		<property name="sourceModule" value="ctn_output"/>
+	</module>
+	<module name="val_mntHeight" type="Add">
+		<property name="sourceModule1" value="val_mntHeightBase"/>
+		<property name="sourceModule2" value="ctn_outputInv"/>
+	</module>
+
+</append>
+</configs>

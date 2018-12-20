@@ -1,0 +1,7 @@
+NWall
+xpath="([^"]*)"
+xpath="$1|/*/trash"
+
+Warning
+xpath="([^"]*)\|/\*/trash"
+xpath="$1"

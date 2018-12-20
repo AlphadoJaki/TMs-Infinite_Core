@@ -1,0 +1,136 @@
+<configs>
+<!-- Plain blender module -->
+<append xpath="/*/terrain_generators/*[@name='vanilla'][count(*[@name='pln_modifierOutput'])=0]|/*/trash">
+	<module name="pln_blenderOutput" type="Constant"/>
+</append>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='pln_modifierOutput'][last()=1]/@name|/*/trash">pln_blenderOutput</set>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='pln_modifierOutput'][last()=2]/parent::*|/*/trash">
+	<module name="pln_blenderCtrl1" type="FastNoise" seed_additive="0">
+		<property name="frequency" value="0.006"/>
+		<property name="lacunarity" value="1.7"/>
+	</module>
+	<module name="pln_blenderOutput" type="Select">
+			<property name="controlModule" value="pln_blenderCtrl1"/>
+		<property name="sourceModule1" value="pln_modifierOutput01"/>
+		<property name="sourceModule2" value="pln_modifierOutput02"/>
+			<property name="bounds" value="0, 100"/>
+			<property name="edgeFalloff" value="0.1"/>
+	</module>
+</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='pln_modifierOutput'][last()=3]/parent::*|/*/trash">
+	<module name="pln_blenderCtrl1" type="FastNoise" seed_additive="0">
+		<property name="frequency" value="0.006"/>
+		<property name="lacunarity" value="1.7"/>
+	</module>
+	<module name="pln_blender1" type="Select">
+			<property name="controlModule" value="pln_blenderCtrl1"/>
+		<property name="sourceModule1" value="pln_modifierOutput01"/>
+		<property name="sourceModule2" value="pln_modifierOutput02"/>
+			<property name="bounds" value="0, 100"/>
+			<property name="edgeFalloff" value="0.1"/>
+	</module>
+	<module name="pln_blenderOutput" type="Select">
+			<property name="controlModule" value="pln_blenderCtrl1"/>
+		<property name="sourceModule1" value="pln_modifierOutput03"/>
+		<property name="sourceModule2" value="pln_blender1"/>
+			<property name="bounds" value="-0.7, 0.7"/>
+			<property name="edgeFalloff" value="0.1"/>
+	</module>
+</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='pln_modifierOutput'][last()=4]/parent::*|/*/trash">
+	<module name="pln_blenderCtrl1" type="FastNoise" seed_additive="0">
+		<property name="frequency" value="0.006"/>
+		<property name="lacunarity" value="1.7"/>
+	</module>
+	<module name="pln_blenderCtrl2" type="FastNoise" seed_additive="0">
+		<property name="frequency" value="0.004"/>
+		<property name="lacunarity" value="1.7"/>
+	</module>
+	<module name="pln_blender1" type="Select">
+		<property name="controlModule" value="pln_blenderCtrl1"/>
+		<property name="sourceModule1" value="pln_modifierOutput01"/>
+		<property name="sourceModule2" value="pln_modifierOutput02"/>
+		<property name="bounds" value="0, 100"/>
+		<property name="edgeFalloff" value="0.1"/>
+	</module>
+	<module name="pln_blender2" type="Select">
+		<property name="controlModule" value="pln_blenderCtrl1"/>
+		<property name="sourceModule1" value="pln_modifierOutput03"/>
+		<property name="sourceModule2" value="pln_modifierOutput04"/>
+		<property name="bounds" value="0, 100"/>
+		<property name="edgeFalloff" value="0.1"/>
+	</module>
+	<module name="pln_blenderOutput" type="Select">
+		<property name="controlModule" value="pln_blenderCtrl2"/>
+		<property name="sourceModule1" value="pln_blender1"/>
+		<property name="sourceModule2" value="pln_blender2"/>
+		<property name="bounds" value="0, 100"/>
+		<property name="edgeFalloff" value="0.05"/>
+	</module>
+</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='pln_modifierOutput'][last()=5]/parent::*|/*/trash">
+	<module name="pln_blenderCtrl1" type="FastNoise" seed_additive="0">
+		<property name="frequency" value="0.006"/>
+		<property name="lacunarity" value="1.7"/>
+	</module>
+	<module name="pln_blenderCtrl2" type="FastNoise" seed_additive="0">
+		<property name="frequency" value="0.004"/>
+		<property name="lacunarity" value="1.7"/>
+	</module>
+	<module name="pln_blender1" type="Select">
+		<property name="controlModule" value="pln_blenderCtrl1"/>
+		<property name="sourceModule1" value="pln_modifierOutput01"/>
+		<property name="sourceModule2" value="pln_modifierOutput02"/>
+		<property name="bounds" value="0, 100"/>
+		<property name="edgeFalloff" value="0.1"/>
+	</module>
+	<module name="pln_blender2" type="Select">
+		<property name="controlModule" value="pln_blenderCtrl1"/>
+		<property name="sourceModule1" value="pln_modifierOutput03"/>
+		<property name="sourceModule2" value="pln_modifierOutput04"/>
+		<property name="bounds" value="0, 100"/>
+		<property name="edgeFalloff" value="0.1"/>
+	</module>
+	<module name="pln_blender3" type="Select">
+		<property name="controlModule" value="pln_blenderCtrl2"/>
+		<property name="sourceModule1" value="pln_blender1"/>
+		<property name="sourceModule2" value="pln_blender2"/>
+		<property name="bounds" value="0, 100"/>
+		<property name="edgeFalloff" value="0.05"/>
+	</module>
+	<module name="pln_blenderOutput" type="Select">
+		<property name="controlModule" value="pln_blenderCtrl1"/>
+		<property name="sourceModule1" value="pln_blender3"/>
+		<property name="sourceModule2" value="pln_modifierOutput05"/>
+		<property name="bounds" value="-0.7, 0.7"/>
+		<property name="edgeFalloff" value="0.1"/>
+	</module>
+</append>
+
+
+<append xpath="/*/terrain_generators/*[@name='vanilla']|/*/trash">
+	<module name="pln_blenderMasterVolume" type="FastBillow" seed_additive="0">
+		<property name="frequency" value="0.006"/>
+		<property name="lacunarity" value="1.7"/>
+	</module>
+	<module name="pln_output" type="Select">
+		<property name="controlModule" value="pln_blenderMasterVolume"/>
+		<property name="sourceModule1" value="val_0"/>
+		<property name="sourceModule2" value="pln_blenderOutput"/>
+		<property name="bounds" value="0.1, 100"/>
+		<property name="edgeFalloff" value="0.1"/>
+	</module>
+</append>
+
+<!-- Plain output numbering -->
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='pln_modifierOutput'][1]/@name|/*/trash">
+	pln_modifierOutput01</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='pln_modifierOutput'][1]/@name|/*/trash">
+	pln_modifierOutput02</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='pln_modifierOutput'][1]/@name|/*/trash">
+	pln_modifierOutput03</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='pln_modifierOutput'][1]/@name|/*/trash">
+	pln_modifierOutput04</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='pln_modifierOutput'][1]/@name|/*/trash">
+	pln_modifierOutput05</set>
+</configs>

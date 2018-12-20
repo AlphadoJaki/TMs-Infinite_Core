@@ -1,0 +1,127 @@
+<!--
+val_0
+val_p1
+val_m1
+val_baseInv
+val_wtr
+val_rivBtm
+val_ocnBtm
+val_mntHeight
+-->
+<configs>
+<append xpath="/*/terrain_generators/*[@name='vanilla']|/*/trash">
+
+	<module name="waterPosition" type="Add">
+		<property name="sourceModule1" value="output"/>
+		<property name="sourceModule2" value="val_wtrAdder"/>
+	</module>
+	<module name="finalOutput" type="ScaleOutput">
+		<property name="sourceModule" value="waterPosition"/>
+		<property name="scale" value="100"/>
+	</module>
+	<output module="finalOutput"/>
+</append>
+
+<!-- seed_additive assigner -->
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][1]/@seed_additive|/*/trash">1</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][2]/@seed_additive|/*/trash">2</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][3]/@seed_additive|/*/trash">3</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][4]/@seed_additive|/*/trash">4</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][5]/@seed_additive|/*/trash">5</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][6]/@seed_additive|/*/trash">6</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][7]/@seed_additive|/*/trash">7</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][8]/@seed_additive|/*/trash">8</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][9]/@seed_additive|/*/trash">9</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][10]/@seed_additive|/*/trash">10</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][11]/@seed_additive|/*/trash">11</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][12]/@seed_additive|/*/trash">12</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][13]/@seed_additive|/*/trash">13</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][14]/@seed_additive|/*/trash">14</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][15]/@seed_additive|/*/trash">15</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][16]/@seed_additive|/*/trash">16</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][17]/@seed_additive|/*/trash">17</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][18]/@seed_additive|/*/trash">18</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][19]/@seed_additive|/*/trash">19</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][20]/@seed_additive|/*/trash">20</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][21]/@seed_additive|/*/trash">21</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][22]/@seed_additive|/*/trash">22</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][23]/@seed_additive|/*/trash">23</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][24]/@seed_additive|/*/trash">24</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][25]/@seed_additive|/*/trash">25</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][26]/@seed_additive|/*/trash">26</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][27]/@seed_additive|/*/trash">27</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][28]/@seed_additive|/*/trash">28</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][29]/@seed_additive|/*/trash">29</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][30]/@seed_additive|/*/trash">30</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][31]/@seed_additive|/*/trash">31</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][32]/@seed_additive|/*/trash">32</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][33]/@seed_additive|/*/trash">33</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][34]/@seed_additive|/*/trash">34</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][35]/@seed_additive|/*/trash">35</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][36]/@seed_additive|/*/trash">36</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][37]/@seed_additive|/*/trash">37</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][38]/@seed_additive|/*/trash">38</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][39]/@seed_additive|/*/trash">39</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][40]/@seed_additive|/*/trash">40</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][41]/@seed_additive|/*/trash">41</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][42]/@seed_additive|/*/trash">42</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][43]/@seed_additive|/*/trash">43</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][44]/@seed_additive|/*/trash">44</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][45]/@seed_additive|/*/trash">45</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][46]/@seed_additive|/*/trash">46</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][47]/@seed_additive|/*/trash">47</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][48]/@seed_additive|/*/trash">48</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][49]/@seed_additive|/*/trash">49</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][50]/@seed_additive|/*/trash">50</set><!--
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][51]/@seed_additive|/*/trash">51</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][52]/@seed_additive|/*/trash">52</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][53]/@seed_additive|/*/trash">53</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][54]/@seed_additive|/*/trash">54</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][55]/@seed_additive|/*/trash">55</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][56]/@seed_additive|/*/trash">56</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][57]/@seed_additive|/*/trash">57</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][58]/@seed_additive|/*/trash">58</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][59]/@seed_additive|/*/trash">59</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][50]/@seed_additive|/*/trash">60</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][61]/@seed_additive|/*/trash">61</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][62]/@seed_additive|/*/trash">62</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][63]/@seed_additive|/*/trash">63</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][64]/@seed_additive|/*/trash">64</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][65]/@seed_additive|/*/trash">65</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][66]/@seed_additive|/*/trash">66</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][67]/@seed_additive|/*/trash">67</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][68]/@seed_additive|/*/trash">68</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][69]/@seed_additive|/*/trash">69</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][70]/@seed_additive|/*/trash">70</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][71]/@seed_additive|/*/trash">71</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][72]/@seed_additive|/*/trash">72</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][73]/@seed_additive|/*/trash">73</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][74]/@seed_additive|/*/trash">74</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][75]/@seed_additive|/*/trash">75</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][76]/@seed_additive|/*/trash">76</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][77]/@seed_additive|/*/trash">77</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][78]/@seed_additive|/*/trash">78</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][79]/@seed_additive|/*/trash">79</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][80]/@seed_additive|/*/trash">80</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][81]/@seed_additive|/*/trash">81</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][82]/@seed_additive|/*/trash">82</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][83]/@seed_additive|/*/trash">83</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][84]/@seed_additive|/*/trash">84</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][85]/@seed_additive|/*/trash">85</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][86]/@seed_additive|/*/trash">86</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][87]/@seed_additive|/*/trash">87</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][88]/@seed_additive|/*/trash">88</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][89]/@seed_additive|/*/trash">89</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][90]/@seed_additive|/*/trash">90</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][91]/@seed_additive|/*/trash">91</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][92]/@seed_additive|/*/trash">92</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][93]/@seed_additive|/*/trash">93</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][94]/@seed_additive|/*/trash">94</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][95]/@seed_additive|/*/trash">95</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][96]/@seed_additive|/*/trash">96</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][97]/@seed_additive|/*/trash">97</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][98]/@seed_additive|/*/trash">98</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][99]/@seed_additive|/*/trash">99</set>-->
+
+<remove xpath="/trash|/*/trash"/>
+</configs>

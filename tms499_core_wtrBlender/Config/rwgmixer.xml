@@ -1,0 +1,84 @@
+<configs>
+<!-- Feature nerf assigner -->
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_nerfed'][1]/*[@value='ftr_nerfed']/@value|/*/trash">
+	ftr_output</set>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_nerfed'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_nerfed'][2]/*[@value='ftr_nerfed']/@value|/*/trash">
+	01</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_nerfed'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_nerfed'][2]/*[@value='ftr_nerfed']/@value|/*/trash">
+	02</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_nerfed'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_nerfed'][2]/*[@value='ftr_nerfed']/@value|/*/trash">
+	03</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_nerfed'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_nerfed'][2]/*[@value='ftr_nerfed']/@value|/*/trash">
+	04</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_nerfed'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='ftr_nerfed'][2]/*[@value='ftr_nerfed']/@value|/*/trash">
+	05</append>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[starts-with(@name,'ftr_nerfed')][last()]/@name|/*/trash">
+	wtr_ftr_output</set>
+
+<!-- Plain nerf assigner --><!--
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='pln_nerfed']/*[@value='pln_nerfed'][1]/@value|/*/trash">
+	pln_output</set>-->
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='pln_nerfed'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='pln_nerfed'][2]/*[@value='pln_nerfed']/@value|/*/trash">
+	01</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='pln_nerfed'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='pln_nerfed'][2]/*[@value='pln_nerfed']/@value|/*/trash">
+	02</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='pln_nerfed'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='pln_nerfed'][2]/*[@value='pln_nerfed']/@value|/*/trash">
+	03</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='pln_nerfed'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='pln_nerfed'][2]/*[@value='pln_nerfed']/@value|/*/trash">
+	04</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='pln_nerfed'][1]/@name|
+			/*/terrain_generators/*[@name='vanilla']/*[@name='pln_nerfed'][2]/*[@value='pln_nerfed']/@value|/*/trash">
+	05</append>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[starts-with(@name,'pln_nerfed')][last()]/@name|/*/trash">
+	wtr_pln_output</set>
+
+<!-- Continent nerf assigner -->
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_nerfer' or @name='ctn_nerfed'][position()&lt;3]/*[@value='wtr_modifierOutput']/@value|/*/trash">
+	ctn_output</set>
+
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_nerfer' or @name='ctn_nerfed' or @name='ctn_wtrSideNerfer' or @name='ctn_wtrSide' or @name='ctn_wtr' or @name='wtr_modifierOutput'][position()&lt;7]/@name|
+			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_nerfer' or @name='ctn_nerfed'][position()&lt;5]/*[@value='wtr_modifierOutput']/@value|
+			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_nerfed'][1]/*[@value='ctn_nerfer']/@value|
+			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_wtrSide'][1]/*[@value='ctn_wtrSideNerfer']/@value|
+			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_wtrSide' or @name='ctn_wtrSideNerfer'][position()&lt;3]/*[@value='ctn_nerfed']/@value|
+			   /*/terrain_generators/*[@name='vanilla']/*[@name='wtr_modifierOutput'][1]/*[@value='ctn_wtr']/@value|
+			   /*/terrain_generators/*[@name='vanilla']/*[@name='wtr_modifierOutput' or @name='ctn_wtr'][position()&lt;3]/*[@value='ctn_wtrSide']/@value|/*/trash">
+				01</append>
+
+<!-- Water output numbering -->
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[starts-with(@name,'wtr_modifierOutput')][last()]/@name|/*/trash">
+	wtr_ctn_output</set>
+
+<!-- No water Blending -->
+<append xpath="/*/terrain_generators/*[@name='vanilla'][count(*[@name='wtr_ctn_output'])=0]|/*/trash">
+	<module name="wld_terrainModifier" type="Add">
+		<property name="sourceModule1" value="wtr_pln_output"/>
+		<property name="sourceModule2" value="ftr_output"/>
+	</module>
+	<module name="wld_output" type="Add">
+		<property name="sourceModule1" value="wld_terrainModifier"/>
+		<property name="sourceModule2" value="ctn_output"/>
+	</module>
+</append>
+
+<!-- Watered world blending -->
+<append xpath="/*/terrain_generators/*[@name='vanilla'][count(*[@name='wtr_ctn_output'])=1]|/*/trash">
+	<module name="wld_terrainModifier" type="Add">
+		<property name="sourceModule1" value="wtr_pln_output"/>
+		<property name="sourceModule2" value="wtr_ftr_output"/>
+	</module>
+	<module name="wld_output" type="Add">
+		<property name="sourceModule1" value="wld_terrainModifier"/>
+		<property name="sourceModule2" value="wtr_ctn_output"/>
+	</module>
+</append>
+</configs>

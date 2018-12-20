@@ -1,0 +1,67 @@
+<configs>
+<!-- Continent blender module -->
+<append xpath="/*/terrain_generators/*[@name='vanilla'][count(*[@name='ctn_modifierOutput'])=0]|/*/trash">
+	<module name="ctn_output" type="Constant"/>
+</append>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_modifierOutput'][last()=1]/@name|/*/trash">ctn_output</set>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_modifierOutput'][last()=2]/parent::*|/*/trash">
+	<module name="ctn_output" type="Add">
+		<property name="sourceModule1" value="ctn_modifierOutput01"/>
+		<property name="sourceModule2" value="ctn_modifierOutput02"/>
+	</module>
+</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_modifierOutput'][last()=3]/parent::*|/*/trash">
+	<module name="ctn_blender1" type="Add">
+		<property name="sourceModule1" value="ctn_modifierOutput01"/>
+		<property name="sourceModule2" value="ctn_modifierOutput02"/>
+	</module>
+	<module name="ctn_output" type="Add">
+		<property name="sourceModule1" value="ctn_blender1"/>
+		<property name="sourceModule2" value="ctn_modifierOutput03"/>
+	</module>
+</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_modifierOutput'][last()=4]/parent::*|/*/trash">
+	<module name="ctn_blender1" type="Add">
+		<property name="sourceModule1" value="ctn_modifierOutput01"/>
+		<property name="sourceModule2" value="ctn_modifierOutput02"/>
+	</module>
+	<module name="ctn_blender2" type="Add">
+		<property name="sourceModule1" value="ctn_blender1"/>
+		<property name="sourceModule2" value="ctn_modifierOutput03"/>
+	</module>
+	<module name="ctn_output" type="Add">
+		<property name="sourceModule1" value="ctn_blender2"/>
+		<property name="sourceModule2" value="ctn_modifierOutput04"/>
+	</module>
+</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_modifierOutput'][last()=5]/parent::*|/*/trash">
+	<module name="ctn_blender1" type="Add">
+		<property name="sourceModule1" value="ctn_modifierOutput01"/>
+		<property name="sourceModule2" value="ctn_modifierOutput02"/>
+	</module>
+	<module name="ctn_blender2" type="Add">
+		<property name="sourceModule1" value="ctn_blender1"/>
+		<property name="sourceModule2" value="ctn_modifierOutput03"/>
+	</module>
+	<module name="ctn_blender3" type="Add">
+		<property name="sourceModule1" value="ctn_blender2"/>
+		<property name="sourceModule2" value="ctn_modifierOutput04"/>
+	</module>
+	<module name="ctn_output" type="Add">
+		<property name="sourceModule1" value="ctn_blender3"/>
+		<property name="sourceModule2" value="ctn_modifierOutput05"/>
+	</module>
+</append>
+
+<!-- Continent output numbering -->
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_modifierOutput'][1]/@name|/*/trash">
+	ctn_modifierOutput01</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_modifierOutput'][1]/@name|/*/trash">
+	ctn_modifierOutput02</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_modifierOutput'][1]/@name|/*/trash">
+	ctn_modifierOutput03</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_modifierOutput'][1]/@name|/*/trash">
+	ctn_modifierOutput04</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_modifierOutput'][1]/@name|/*/trash">
+	ctn_modifierOutput05</set>
+</configs>
