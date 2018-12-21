@@ -9,7 +9,7 @@ val_ocnBtm
 val_mntHeight
 -->
 <configs>
-<append xpath="/|/*/trash"><trash/></append>
+<append xpath="/*/trash|/*/trash"><trash/></append>
 
 <set xpath="/*/terrain_generators|/*/trash">
 	<terrain_generator name="vanilla" base_height="32" water_level="41">
