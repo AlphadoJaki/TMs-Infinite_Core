@@ -117,8 +117,8 @@
 		<property name="controlModule" value="pln_blenderMasterVolume"/>
 		<property name="sourceModule1" value="val_0"/>
 		<property name="sourceModule2" value="pln_blenderOutput"/>
-		<property name="bounds" value="0.1, 100"/>
-		<property name="edgeFalloff" value="0.1"/>
+		<property name="bounds" value="0.05, 100"/>
+		<property name="edgeFalloff" value="0.15"/>
 	</module>
 </append>
 
