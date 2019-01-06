@@ -1,0 +1,12 @@
+<configs>
+<!-- World Generation Size 4096/8192/16384 -->
+<set xpath="/*/*[substring(name(), string-length(name()) - string-length('_generators')+1) = '_generators']/*[starts-with(@name,'vanilla')]/*[@name='val_worldSize']/*/@value|/*/trash">
+4096
+</set>
+
+<!-- Water level -->
+<set xpath="/*/*[substring(name(), string-length(name()) - string-length('_generators')+1) = '_generators']/*[starts-with(@name,'vanilla')]/@water_level|
+			/*/*[substring(name(), string-length(name()) - string-length('_generators')+1) = '_generators']/*[starts-with(@name,'vanilla')]/*[@name='val_wtrCfg']/*/@value|/*/trash">
+38
+</set>
+</configs>
