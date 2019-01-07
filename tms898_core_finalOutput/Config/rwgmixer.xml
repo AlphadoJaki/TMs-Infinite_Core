@@ -22,6 +22,52 @@ val_mntHeight
 	<output module="finalOutput"/>
 </append>
 
+<append xpath="/*/biome_generators/*[@name='vanillaSmall'][not(output)]|/*/trash">
+	<module name="voronoi" type="Voronoi">
+		<property name="frequency" value="0.0012"/> 
+		<property name="displacement" value="0.5"/>
+	</module>
+	<module name="biasOutput" type="BiasOutput">
+		<property name="sourceModule" value="voronoi"/>
+		<property name="bias" value="0.5"/>
+	</module>
+	<module name="scaleOutput" type="ScaleOutput">
+		<property name="sourceModule" value="biasOutput"/>
+		<property name="scale" value="1"/>
+	</module>
+	<module name="dithering" type="FastTurbulence">
+		<property name="sourceModule" value="scaleOutput"/>
+		<property name="frequency" value="0.25"/>
+		<property name="power" value="40"/>
+		<property name="roughness" value="3"/>
+	</module>
+	<module name="jiggle" type="FastTurbulence">
+		<property name="sourceModule" value="dithering"/>
+		<property name="frequency" value="0.25"/>
+		<property name="power" value="30"/>
+		<property name="roughness" value="3"/>
+	</module>
+	<module name="clampOutput" type="ClampOutput">
+		<property name="sourceModule" value="jiggle"/>
+		<property name="bounds" value="0,1"/>
+	</module>
+	<module name="biomeOutput" type="BiomeIDMapper">
+		<property name="sourceModule" value="clampOutput"/>
+		<property name="biomemap0.Name" value="pine_forest"/>
+		<property name="biomemap0.Range" value="0.2,0.5"/>
+		<property name="biomemap1.Name" value="snow"/>
+		<property name="biomemap1.Range" value="0,0.2"/>
+		<property name="biomemap2.Name" value="wasteland"/>
+		<property name="biomemap2.Range" value="0.5,0.7"/>
+		<property name="biomemap3.Name" value="burnt_forest"/>
+		<property name="biomemap3.Range" value="0.7,0.8"/>
+		<property name="biomemap4.Name" value="desert"/>
+		<property name="biomemap4.Range" value="0.8,1.1"/>
+	</module>
+
+	<output module="biomeOutput"/>
+</append>
+
 <!-- seed_additive assigner -->
 <set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][1]/@seed_additive|/*/trash">1</set>
 <set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][2]/@seed_additive|/*/trash">2</set>
