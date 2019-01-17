@@ -85,9 +85,9 @@ ftr_ctrl
 	<module name="val_mntHeightShrunk" type="ScaleOutput"><property name="sourceModule" value="val_mntHeightCfg"/><property name="scale" value="0.01"/></module>
 	<module name="val_mntHeightBase" type="Add"><property name="sourceModule1" value="val_mntHeightShrunk"/><property name="sourceModule2" value="val_baseInv"/></module>
 
-	<module name="val_plnBtm" type="Constant"><property name="constant" value="0.06"/></module>
-	<module name="val_plnCtr" type="Constant"><property name="constant" value="0.16"/></module>
-	<module name="val_plnRof" type="Constant"><property name="constant" value="0.36"/></module>
+	<module name="val_plnBtm" type="Constant"><property name="constant" value="0.04"/></module>
+	<module name="val_plnCtr" type="Constant"><property name="constant" value="0.14"/></module>
+	<module name="val_plnRof" type="Constant"><property name="constant" value="0.24"/></module>
 
 	<module name="val_rivSide" type="Constant"><property name="constant" value="0.01"/></module>
 	<module name="val_canyonBtm" type="Constant"><property name="constant" value="0.02"/></module>
