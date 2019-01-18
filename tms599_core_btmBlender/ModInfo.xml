@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xml>
 	<ModInfo>
-		<Name value="TMs Bottom core (post) 99 : Bottom blender" />
-		<Description value="" />
+		<Name value="TMs Bottom core 99 : Bottom blender" />
+		<Description value="CORE file 8/9 of TMs(Terrain Modifiers)." />
 		<Author value="Alphado-Jaki" />
 		<Version value="1.0.0" />
 	<!--<Link value="https://7daystodie.com/forums/showthread.php?100968"/>-->
