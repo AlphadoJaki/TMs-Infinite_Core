@@ -8,3 +8,14 @@
 	<!--<Link value="https://7daystodie.com/forums/showthread.php?100968"/>-->
 	</ModInfo>
 </xml>
+<!--
+<xml>
+	<ModInfo>
+		<Name value="地形MOD集 設定ファイル : ワールド基本設定" />
+		<Description value="ワールドの大きさ、水場の標高の設定ファイルです。" />
+		<Author value="Alphado-Jaki" />
+		<Version value="1.0.0" />
+		<Link value="https://zawazawa.jp/sdtd_mod/topic/18"/>
+	</ModInfo>
+</xml>
+-->
