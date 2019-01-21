@@ -1,7 +1,18 @@
 <configs>
 <!-- Continent blender module -->
 <append xpath="/*/terrain_generators/*[@name='vanilla'][count(*[@name='ctn_modifierOutput'])=0]|/*/trash">
-	<module name="ctn_output" type="Constant"/>
+	<module name="ctnMM_bone" type="FastNoise" no_seed="true">
+		<property name="frequency" value="0.000001"/>
+	</module>
+	<module name="ctnMM_noise" type="ScaleBiasOutput">
+		<property name="sourceModule" value="ctnMM_bone"/>
+		<property name="scale" value="0.002"/>
+		<property name="bias" value="0.004"/>
+	</module>
+	<module name="ctn_output" type="Add">
+		<property name="sourceModule1" value="ctnMM_noise"/>
+		<property name="sourceModule2" value="val_plnLow"/>
+	</module>
 </append>
 <set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_modifierOutput'][last()=1]/@name|/*/trash">ctn_output</set>
 <append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_modifierOutput'][last()=2]/parent::*|/*/trash">
