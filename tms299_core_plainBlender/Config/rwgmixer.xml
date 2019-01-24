@@ -109,16 +109,58 @@
 
 
 <append xpath="/*/terrain_generators/*[@name='vanilla']|/*/trash">
-	<module name="pln_blenderMasterVolume" type="FastBillow" seed_additive="0">
-		<property name="frequency" value="0.006"/>
-		<property name="lacunarity" value="1.7"/>
+	<module name="val_plnPercCfg" type="Constant">
+		<property name="constant" value="1"/>
+	</module>
+	<module name="val_plnPercZero" type="BiasOutput">
+		<property name="sourceModule" value="val_plnPercCfg"/>
+		<property name="bias" value="-1"/>
+	</module>
+	<module name="val_plnPerc" type="ClampOutput">
+		<property name="sourceModule" value="val_plnPercZero"/>
+		<property name="bounds" value="-1,1"/>
+	</module>
+
+	<module name="val_plnInterPercCfg" type="Constant">
+		<property name="constant" value="1"/>
+	</module>
+	<module name="val_plnInterPercAssign" type="ScaleBiasOutput">
+		<property name="sourceModule" value="val_plnInterPercCfg"/>
+		<property name="scale" value="-0.7"/>
+		<property name="bias" value="1.7"/>
+	</module>
+	<module name="val_plnInterPerc" type="ClampOutput">
+		<property name="sourceModule" value="val_plnInterPercAssign"/>
+		<property name="bounds" value="0.3,1.7"/>
+	</module>
+
+	<module name="pln_blenderMasterVolumeBone" type="FastNoise" seed_additive="0">
+		<property name="frequency" value="0.005"/>
+		<property name="lacunarity" value="1.3235711"/>
+		<property name="octaveCount" value="6"/>
+	</module>
+	<module name="pln_blenderMasterVolumeAbs" type="AbsoluteOutput">
+		<property name="sourceModule" value="pln_blenderMasterVolumeBone"/>
+	</module>
+	<module name="pln_blenderMasterVolumeRaw" type="ScaleBiasOutput">
+		<property name="sourceModule" value="pln_blenderMasterVolumeAbs"/>
+		<property name="scale" value="3"/>
+		<property name="bias" value="-1.74"/>
+	</module>
+	<module name="pln_blenderMasterVolumeBiased" type="Add">
+		<property name="sourceModule1" value="pln_blenderMasterVolumeRaw"/>
+		<property name="sourceModule2" value="val_plnPerc"/>
+	</module>
+	<module name="pln_blenderMasterVolume" type="Multiply">
+		<property name="sourceModule1" value="pln_blenderMasterVolumeBiased"/>
+		<property name="sourceModule2" value="val_plnInterPerc"/>
 	</module>
 	<module name="pln_output" type="Select">
 		<property name="controlModule" value="pln_blenderMasterVolume"/>
 		<property name="sourceModule1" value="val_0"/>
 		<property name="sourceModule2" value="pln_blenderOutput"/>
-		<property name="bounds" value="0.05, 100"/>
-		<property name="edgeFalloff" value="0.15"/>
+		<property name="bounds" value="0,10000"/>
+		<property name="edgeFalloff" value="1"/>
 	</module>
 </append>
 

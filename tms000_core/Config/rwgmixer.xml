@@ -47,24 +47,28 @@ ftr_ctrl
 		<property name="constant" value="4096"/>
 	</module>
 
+	<module name="val_worldSizeInv" type="InvertOutput"><property name="sourceModule" value="val_worldSize"/></module>
 	<module name="val_worldSizeRecip" type="Power"><property name="baseModule" value="val_worldSize"/><property name="powerModule" value="val_m1"/></module>
 	<module name="val_worldSizeHalf" type="ScaleOutput"><property name="sourceModule" value="val_worldSize"/><property name="scale" value="0.5"/></module>
+	<module name="val_worldSizeHalfInv" type="ScaleOutput"><property name="sourceModule" value="val_worldSize"/><property name="scale" value="-0.5"/></module>
 	<module name="val_worldSizeHalfRecip" type="Power"><property name="baseModule" value="val_worldSizeHalf"/><property name="powerModule" value="val_m1"/></module>
 
 	<module name="val_worldSafeSize" type="BiasOutput"><property name="sourceModule" value="val_worldSize"/><property name="bias" value="-640"/></module>
+	<module name="val_worldSafeSizeInv" type="InvertOutput"><property name="sourceModule" value="val_worldSafeSize"/></module>
 	<module name="val_worldSafeSizeRecip" type="Power"><property name="baseModule" value="val_worldSafeSize"/><property name="powerModule" value="val_m1"/></module>
 	<module name="val_worldSafeSizeHalf" type="ScaleOutput"><property name="sourceModule" value="val_worldSafeSize"/><property name="scale" value="0.5"/></module>
+	<module name="val_worldSafeSizeHalfInv" type="ScaleOutput"><property name="sourceModule" value="val_worldSafeSize"/><property name="scale" value="-0.5"/></module>
 	<module name="val_worldSafeSizeHalfRecip" type="Power"><property name="baseModule" value="val_worldSafeSizeHalf"/><property name="powerModule" value="val_m1"/></module>
 
 	<module name="val_worldSafeLower" type="Constant"><property name="constant" value="320"/></module>
 	<module name="val_worldSafeUpper" type="BiasOutput"><property name="sourceModule" value="val_worldSize"/><property name="bias" value="-320"/></module>
 
-	<module name="dist_southWestBase" type="Cylinders"><property name="frequency" value="1e-20"/></module>
-	<module name="dist_southWest" type="ScaleBiasOutput"><property name="sourceModule" value="dist_southWestBase"/><property name="scale" value="-5e+19"/><property name="bias" value="5e+19"/></module>
-	<module name="x" type="ScaleInput"><property name="sourceModule" value="checker"/><property name="x" value="1"/><property name="y" value="0"/><property name="z" value="0"/></module>
-	<module name="z" type="ScaleInput"><property name="sourceModule" value="checker"/><property name="x" value="0"/><property name="y" value="0"/><property name="z" value="1"/></module>
+	<module name="dist_southWestBase" type="Cylinders"><property name="frequency" value="1e-10"/></module>
+	<module name="dist_southWest" type="ScaleBiasOutput"><property name="sourceModule" value="dist_southWestBase"/><property name="scale" value="-25e+8"/><property name="bias" value="25e+8"/></module>
+	<module name="x" type="ScaleInput"><property name="sourceModule" value="dist_southWest"/><property name="x" value="1"/><property name="y" value="0"/><property name="z" value="0"/></module>
+	<module name="z" type="ScaleInput"><property name="sourceModule" value="dist_southWest"/><property name="x" value="0"/><property name="y" value="0"/><property name="z" value="1"/></module>
 
-	<module name="dist_center" type="DisplaceInput"><property name="sourceModule" value="dist_southWest"/><property name="xDisplaceModule" value="val_worldSizeHalf"/><property name="yDisplaceModule" value="val_0"/><property name="zDisplaceModule" value="val_worldSizeHalf"/></module>
+	<module name="dist_center" type="DisplaceInput"><property name="sourceModule" value="dist_southWest"/><property name="xDisplaceModule" value="val_worldSizeHalfInv"/><property name="yDisplaceModule" value="val_0"/><property name="zDisplaceModule" value="val_worldSizeHalfInv"/></module>
 
 	<module name="checker" type="Checkerboard"/>
 	<module name="sgn_x" type="ScaleInput"><property name="sourceModule" value="checker"/><property name="x" value="1e-10"/><property name="y" value="0"/><property name="z" value="0"/></module>
