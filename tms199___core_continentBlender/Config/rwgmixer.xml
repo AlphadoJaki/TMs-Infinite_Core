@@ -1,4 +1,4 @@
-<configs>
+<configs><!-- ctn_ -->
 <!-- Continent blender module -->
 <append xpath="/*/terrain_generators/*[@name='vanilla'][count(*[@name='ctn_modifierOutput'])=0]|/*/trash">
 	<module name="ctnMM_bone" type="FastNoise" no_seed="true">
@@ -76,3 +76,49 @@
 <set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_modifierOutput'][1]/@name|/*/trash">
 	ctn_modifierOutput05</set>
 </configs>
+<!--
+val_0
+val_p1
+val_m1
+val_worldSize
+val_worldSizeInv
+val_worldSizeRecip
+val_worldSizeHalf
+val_worldSizeHalfInv
+val_worldSizeHalfRecip
+val_worldSafeSize
+val_worldSafeSizeInv
+val_worldSafeSizeRecip
+val_worldSafeSizeHalf
+val_worldSafeSizeHalfInv
+val_worldSafeSizeHalfRecip
+val_worldSafeLower
+val_worldSafeUpper
+dist_southWestBase
+dist_southWest
+x
+z
+dist_center
+checker
+sgn_x
+sgn_z
+val_baseCfg
+val_baseShrunk
+val_baseInv
+val_wtrCfg
+val_wtrShrunk
+val_wtrAdder
+val_rivBtm
+val_ocnBtm
+val_mntHeightCfg
+val_mntHeightShrunk
+val_mntHeightBase
+val_plnBtm
+val_plnLow
+val_plnCtr
+val_plnHig
+val_plnRof
+val_rivSide
+val_canyonBtm
+ftr_ctrl
+-->
