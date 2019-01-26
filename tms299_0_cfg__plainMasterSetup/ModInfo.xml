@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="TMs 299 0 (config) Plain blender setup" />
+		<Description value="Config for blending on continent and plain." />
+		<Author value="Alphado-Jaki" />
+		<Version value="1.1.0" />
+	<!--<Link value="https://7daystodie.com/forums/showthread.php?100968"/>-->
+	</ModInfo>
+</xml>
+<!--
+<xml>
+	<ModInfo>
+		<Name value="地形MOD集 設定ファイル : 丘の混合設定" />
+		<Description value="丘と平野を混ぜる時の設定ができます。" />
+		<Author value="Alphado-Jaki" />
+		<Version value="1.0.0" />
+		<Link value="https://zawazawa.jp/sdtd_mod/topic/18"/>
+	</ModInfo>
+</xml>
+-->

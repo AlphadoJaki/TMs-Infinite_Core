@@ -1,0 +1,40 @@
+<configs>
+<!--
+						Size of plain area
+			0	= = 0.5 = 	1	= = = 1.5 = = 	2
+Flat.				Default.			Plain anywhere.
+Mostly continent	You can see fair	Land scape is just
+only area. Best		area of plain.		awesome. But most
+for road and hub,	Nice for road and	road and hub are
+but boring			hub.				dead.
+
+						丘の広さ
+			0	= = 0.5 = 	1	= = = 1.5 = = 	2
+真っ平ら				デフォルト				全部丘
+ほとんど平らな陸地です。		十分な広さの丘が広がり		景色は最高の状態です。
+道や街の生成にとっては最良	ます。道や街にとってはそれ	ただ、道や街は全く生成
+ですが、つまらない地形になり	なりの値です。			されないかもしれません。
+ます。										
+-->
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='val_plnPercCfg']/*/@value|/*/trash">
+1
+</set>
+
+<!--
+		Size of interstate area between continent & plain
+			0	= = 0.5 = 	1	= = = 1.5 = = 	2
+Abrupt.				Default.			Indistinguishable.
+Suddenly change		Smoothly change		Continent and plain
+from continent to	from continent to	is fully mixed. All
+plain area.			plain area.			area is interstate.
+
+						丘と平野の間の変化
+			0	= = 0.5 = 	1	= = = 1.5 = = 	2
+急					デフォルト				判別不可能
+突然、平野から丘に変わり	なめらかに平野から丘へと		もはや平野と丘は完全に
+ます。					変化していきます。			混じってしまいます。
+-->
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='val_plnInterPercCfg']/*/@value|/*/trash">
+1
+</set>
+</configs>
