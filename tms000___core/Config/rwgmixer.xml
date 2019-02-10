@@ -64,6 +64,11 @@
 	<module name="ftr_ctrl" type="Constant"><property name="constant" value="1"/></module>
 
 </set>
+
+<set xpath="/*/*[substring(name(), string-length(name()) - string-length('_generators')+1) = '_generators']/*[starts-with(@name,'vanilla')]/@water_level|
+			/*/*[substring(name(), string-length(name()) - string-length('_generators')+1) = '_generators']/*[starts-with(@name,'vanilla')]/*[@name='val_wtrCfg']/*/@value|/*/trash">38</set>
+<set xpath="/*/*[substring(name(), string-length(name()) - string-length('_generators')+1) = '_generators']/*[starts-with(@name,'vanilla')]/@base_height|
+			/*/*[substring(name(), string-length(name()) - string-length('_generators')+1) = '_generators']/*[starts-with(@name,'vanilla')]/*[@name='val_baseCfg']/*/@value|/*/trash">32</set>
 </configs>
 <!--
 val_0
