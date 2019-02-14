@@ -42,16 +42,14 @@
 	wtr_pln_output</set>
 
 <!-- Continent nerf assigner -->
-<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_nerfer' or @name='ctn_nerfed'][position()&lt;3]/*[@value='wtr_modifierOutput']/@value|/*/trash">
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='wtr_modifierOutput'][1]/*[@value='wtr_modifierOutput']/@value|/*/trash">
+	ctn_output</set>
+<set xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_wtrAndWtr'][1]/*[@value='wtr_modifierOutput']/@value|/*/trash">
 	ctn_output</set>
 
-<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_nerfer' or @name='ctn_nerfed' or @name='ctn_wtrSideNerfer' or @name='ctn_wtrSide' or @name='ctn_wtr' or @name='wtr_modifierOutput'][position()&lt;7]/@name|
-			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_nerfer' or @name='ctn_nerfed'][position()&lt;5]/*[@value='wtr_modifierOutput']/@value|
-			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_nerfed'][1]/*[@value='ctn_nerfer']/@value|
-			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_wtrSide'][1]/*[@value='ctn_wtrSideNerfer']/@value|
-			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_wtrSide' or @name='ctn_wtrSideNerfer'][position()&lt;3]/*[@value='ctn_nerfed']/@value|
-			   /*/terrain_generators/*[@name='vanilla']/*[@name='wtr_modifierOutput'][1]/*[@value='ctn_wtr']/@value|
-			   /*/terrain_generators/*[@name='vanilla']/*[@name='wtr_modifierOutput' or @name='ctn_wtr'][position()&lt;3]/*[@value='ctn_wtrSide']/@value|/*/trash">
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_nerfer' or @name='ctn_wtrSideNerfer' or @name='ctn_wtrAndWtr' or @name='wtr_modifierOutput'][position()&lt;5]/@name|
+			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_wtrSideNerfer' or @name='ctn_wtrAndWtr' or @name='wtr_modifierOutput'][position()&lt;4]/*[@value='ctn_nerfer' or @value='ctn_wtrSideNerfer' or @value='ctn_wtrAndWtr']/@value|
+			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_wtrAndWtr' or @name='wtr_modifierOutput'][position()=3 or position()=4]/*[@value='wtr_modifierOutput']/@value|/*/trash">
 				01</append>
 
 <!-- Water output numbering -->
