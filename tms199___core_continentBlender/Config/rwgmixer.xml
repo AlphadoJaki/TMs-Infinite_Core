@@ -96,9 +96,14 @@ val_worldSafeLower
 val_worldSafeUpper
 dist_southWestBase
 dist_southWest
+dist_center
+distSquare_center
 x
 z
-dist_center
+x_center
+z_center
+distX_center
+distZ_center
 checker
 sgn_x
 sgn_z

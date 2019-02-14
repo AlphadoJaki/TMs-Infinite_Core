@@ -28,10 +28,16 @@
 
 	<module name="dist_southWestBase" type="Cylinders"><property name="frequency" value="1e-10"/></module>
 	<module name="dist_southWest" type="ScaleBiasOutput"><property name="sourceModule" value="dist_southWestBase"/><property name="scale" value="-25e+8"/><property name="bias" value="25e+8"/></module>
+	<module name="dist_center" type="DisplaceInput"><property name="sourceModule" value="dist_southWest"/><property name="xDisplaceModule" value="val_worldSizeHalfInv"/><property name="yDisplaceModule" value="val_0"/><property name="zDisplaceModule" value="val_worldSizeHalfInv"/></module>
+
 	<module name="x" type="ScaleInput"><property name="sourceModule" value="dist_southWest"/><property name="x" value="1"/><property name="y" value="0"/><property name="z" value="0"/></module>
 	<module name="z" type="ScaleInput"><property name="sourceModule" value="dist_southWest"/><property name="x" value="0"/><property name="y" value="0"/><property name="z" value="1"/></module>
+	<module name="x_center" type="Add"><property name="sourceModule1" value="x"/><property name="sourceModule2" value="val_worldSizeHalfInv"/></module>
+	<module name="z_center" type="Add"><property name="sourceModule1" value="z"/><property name="sourceModule2" value="val_worldSizeHalfInv"/></module>
+	<module name="distX_center" type="AbsoluteOutput"><property name="sourceModule" value="x_center"/></module>
+	<module name="distZ_center" type="AbsoluteOutput"><property name="sourceModule" value="z_center"/></module>
 
-	<module name="dist_center" type="DisplaceInput"><property name="sourceModule" value="dist_southWest"/><property name="xDisplaceModule" value="val_worldSizeHalfInv"/><property name="yDisplaceModule" value="val_0"/><property name="zDisplaceModule" value="val_worldSizeHalfInv"/></module>
+	<module name="distSquare_center" type="LargerOutput"><property name="sourceModule1" value="distX_center"/><property name="sourceModule2" value="distZ_center"/></module>
 
 	<module name="checker" type="Checkerboard"/>
 	<module name="sgn_x" type="ScaleInput"><property name="sourceModule" value="checker"/><property name="x" value="1e-10"/><property name="y" value="0"/><property name="z" value="0"/></module>
@@ -90,9 +96,14 @@ val_worldSafeLower
 val_worldSafeUpper
 dist_southWestBase
 dist_southWest
+dist_center
+distSquare_center
 x
 z
-dist_center
+x_center
+z_center
+distX_center
+distZ_center
 checker
 sgn_x
 sgn_z
