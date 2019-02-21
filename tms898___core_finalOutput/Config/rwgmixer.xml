@@ -159,8 +159,10 @@
 <set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][98]/@seed_additive|/*/trash">98</set>
 <set xpath="/*/terrain_generators/*[@name='vanilla']/*[@seed_additive][99]/@seed_additive|/*/trash">99</set>-->
 
-<!-- Alpha17.2b20fix -->
+<!-- Alpha17.2b27fix disable:
+     Alpha17.2b20fix
 <set xpath="/*/terrain_generators[*[@name='vanilla2']]/*[@name='vanilla']/*[@name='finalOutput']/*[@name='scale']/@value|/*/trash">0.3921569</set>
+-->
 
 <remove xpath="/trash|/*/trash"/>
 </configs>
