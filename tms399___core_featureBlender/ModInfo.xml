@@ -4,7 +4,7 @@
 		<Name value="TMs 399   (core) Feature blender" />
 		<Description value="CORE file 5/9 of TMs(Terrain Modifiers)." />
 		<Author value="Alphado-Jaki" />
-		<Version value="1.1.2" />
+		<Version value="1.1.3" />
 	<!--<Link value="https://7daystodie.com/forums/showthread.php?100968"/>-->
 	</ModInfo>
 </xml>
@@ -14,7 +14,7 @@
 		<Name value="地形MOD集 特徴前提ファイル99 : 特徴混合器" />
 		<Description value="地形生成MOD集 前提ファイル 5/9" />
 		<Author value="Alphado-Jaki" />
-		<Version value="1.1.2" />
+		<Version value="1.1.3" />
 		<Link value="https://zawazawa.jp/sdtd_mod/topic/18"/>
 	</ModInfo>
 </xml>

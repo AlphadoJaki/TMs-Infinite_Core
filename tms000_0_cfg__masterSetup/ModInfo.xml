@@ -4,7 +4,7 @@
 		<Name value="TMs 000 0 (config) overhaul set up" />
 		<Description value="Config for world size, water height." />
 		<Author value="Alphado-Jaki" />
-		<Version value="1.1.2" />
+		<Version value="1.1.3" />
 	<!--<Link value="https://7daystodie.com/forums/showthread.php?100968"/>-->
 	</ModInfo>
 </xml>
@@ -14,7 +14,7 @@
 		<Name value="地形MOD集 設定ファイル : ワールド基本設定" />
 		<Description value="ワールドの大きさ、水場の標高の設定ファイルです。" />
 		<Author value="Alphado-Jaki" />
-		<Version value="1.1.2" />
+		<Version value="1.1.3" />
 		<Link value="https://zawazawa.jp/sdtd_mod/topic/18"/>
 	</ModInfo>
 </xml>
