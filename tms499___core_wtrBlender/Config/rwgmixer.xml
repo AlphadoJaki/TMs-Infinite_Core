@@ -51,6 +51,22 @@
 			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_wtrSideNerfer' or @name='ctn_wtrAndWtr' or @name='wtr_modifierOutput'][position()&lt;4]/*[@value='ctn_nerfer' or @value='ctn_wtrSideNerfer' or @value='ctn_wtrAndWtr']/@value|
 			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_wtrAndWtr' or @name='wtr_modifierOutput'][position()=3 or position()=4]/*[@value='wtr_modifierOutput']/@value|/*/trash">
 				01</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_nerfer' or @name='ctn_wtrSideNerfer' or @name='ctn_wtrAndWtr' or @name='wtr_modifierOutput'][position()&lt;5]/@name|
+			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_wtrSideNerfer' or @name='ctn_wtrAndWtr' or @name='wtr_modifierOutput'][position()&lt;4]/*[@value='ctn_nerfer' or @value='ctn_wtrSideNerfer' or @value='ctn_wtrAndWtr']/@value|
+			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_wtrAndWtr' or @name='wtr_modifierOutput'][position()=3 or position()=4]/*[@value='wtr_modifierOutput']/@value|/*/trash">
+				02</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_nerfer' or @name='ctn_wtrSideNerfer' or @name='ctn_wtrAndWtr' or @name='wtr_modifierOutput'][position()&lt;5]/@name|
+			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_wtrSideNerfer' or @name='ctn_wtrAndWtr' or @name='wtr_modifierOutput'][position()&lt;4]/*[@value='ctn_nerfer' or @value='ctn_wtrSideNerfer' or @value='ctn_wtrAndWtr']/@value|
+			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_wtrAndWtr' or @name='wtr_modifierOutput'][position()=3 or position()=4]/*[@value='wtr_modifierOutput']/@value|/*/trash">
+				03</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_nerfer' or @name='ctn_wtrSideNerfer' or @name='ctn_wtrAndWtr' or @name='wtr_modifierOutput'][position()&lt;5]/@name|
+			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_wtrSideNerfer' or @name='ctn_wtrAndWtr' or @name='wtr_modifierOutput'][position()&lt;4]/*[@value='ctn_nerfer' or @value='ctn_wtrSideNerfer' or @value='ctn_wtrAndWtr']/@value|
+			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_wtrAndWtr' or @name='wtr_modifierOutput'][position()=3 or position()=4]/*[@value='wtr_modifierOutput']/@value|/*/trash">
+				04</append>
+<append xpath="/*/terrain_generators/*[@name='vanilla']/*[@name='ctn_nerfer' or @name='ctn_wtrSideNerfer' or @name='ctn_wtrAndWtr' or @name='wtr_modifierOutput'][position()&lt;5]/@name|
+			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_wtrSideNerfer' or @name='ctn_wtrAndWtr' or @name='wtr_modifierOutput'][position()&lt;4]/*[@value='ctn_nerfer' or @value='ctn_wtrSideNerfer' or @value='ctn_wtrAndWtr']/@value|
+			   /*/terrain_generators/*[@name='vanilla']/*[@name='ctn_wtrAndWtr' or @name='wtr_modifierOutput'][position()=3 or position()=4]/*[@value='wtr_modifierOutput']/@value|/*/trash">
+				05</append>
 
 <!-- Water output numbering -->
 <set xpath="/*/terrain_generators/*[@name='vanilla']/*[starts-with(@name,'wtr_modifierOutput')][last()]/@name|/*/trash">
